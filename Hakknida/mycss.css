@@ -1,0 +1,68 @@
+.hakkindaBody{
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+#fst{
+   position: absolute;
+   top:6%;
+   height: 40%;
+   width: 50%;
+   font-size: larger;
+   text-align: end;
+}
+@keyframes jump{
+    0%{transform:translateY(0);}
+    50%{transform:translateY(-50px);}
+    100%{transform:translate(0);}
+
+}
+.jump-letter{
+
+    animation: jump 2s infinite;
+}
+
+#Sidepic{
+  margin-right: 2%;
+}
+#faPic{
+    height: 100%;
+}
+#volPic{
+    height:60%;
+}
+.refNoLine{
+    text-decoration:none ;
+    color: black;
+}
+#SdCont{
+    display: flex;
+    margin-top: 20%;
+    margin-left: 20%;
+     margin-bottom: 10%;    
+}
+#FaCont{
+    margin-top: 0px;
+    margin-left: 35%;
+}
+#SpCont{
+    margin-top: 8%;
+    width: 40%;
+    margin-left:20% ;
+}
+img {
+    max-width: 100%;
+    height: auto;
+    display: block; /* removes small gaps below image */
+    border-radius: 20px;
+    box-shadow:10px 10px 20px rbga(0,0,0,0.1);
+    margin-right: 5%;
+
+  }
+.flex-container{
+    display: flex;
+    flex-direction: row;
+}  
+@media(max-width:800px) {
+    .flex-container{
+flex-direction: column;
+    } 
+}
