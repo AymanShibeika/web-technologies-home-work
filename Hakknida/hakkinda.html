@@ -7,13 +7,34 @@
          <title>Hakkinda ana sayfa</title>
      <link rel="stylesheet" href="">    
 </head>
-<body class="bg-secondary">
-  
+<body >
+
+ 
+  <button  class="sideBarButton"  id="BarButton" onclick="js:ShowSDB()">
+    <img src="sideBar.jpg" id="SBImage" alt="">
+  </button> 
+
+  <div id="sideBar" class="cFlex-container column">
+    
+    <div class="box"><button  class="sideBarButton" onclick="js:ShowSDB()">
+      <img src="sideBar.jpg" id="SBImage" alt="">
+    </button>
+  </div> 
+  <br><br><br>
+  <div class="box">
+  <a href="" class="refNoLine sideBarChoice"><h6> <img src="daimond.png" class="sideBarPic" alt=""><strong> Hakkinda </strong></h6></a><br><br>
+  <a href="" class="refNoLine sideBarChoice"><h6> <img src="daimond.png" class="sideBarPic" alt=""><strong> Miras </strong></h6></a><br><br> 
+    <a href="" class="refNoLine sideBarChoice"><h6> <img src="daimond.png" class="sideBarPic" alt=""><strong> CV </strong></h6></a><br><br>
+    <a href="" class="refNoLine sideBarChoice"><h6> <img src="daimond.png" class="sideBarPic" alt=""><strong> iletsism </strong></h6></a><br><br>
+
+  </div>
+  </div>
+
    <div class="jump-letter" id="fst"><h1><strong> Merhaba! </strong></h1></div><br><br><br><br>
    
    <div class="flex-container mt-5" id="SdCont">
         <div class="col-4" id="Sidepic">
-          <img src="sudan.jpg" alt="Picture" class="img-fluid" >
+          <img src="sudan.jpg" alt="Picture" class="img-fluid bigImg" >
         </div>
         <div class="col-8">
           <h4>merhaba! ben ayman Sudanlıyım </h4>
@@ -25,7 +46,7 @@
 
 <div class="flex-container  mt-2 " id="FaCont">
   
-      <div class="col-4" id="Sidepic"><img src="faculty.jpg" id="faPic" class="img-fluid" ></div>
+      <div class="col-4" id="Sidepic"><img src="faculty.jpg" id="faPic" class="img-fluid bigImg" ></div>
       <div class="col-6"><h4><strong> Computer Engineering</strong></h4>
        <p>Sakarya Üniversitesinde bilgisaya ve bilişim Fakültesinde bir 
        öğrenciyim <br>burda hem hocalar hem öğrenciler çok sıcakkanlı ,çok memnunum elhamdullah</p>
@@ -35,7 +56,7 @@
 
 
     <div class="flex-container "  id="SpCont">
-             <div class="col-4"> <img src="volley.jpg" alt="" class="img-fluid" id="volPic"></div>
+             <div class="col-4"> <img src="volley.jpg" alt="" class="img-fluid " id="volPic"></div>
               <div class="col-8">
             <h4><strong>Sevdiğim spor:</strong></h4>
              <p>benim içim volleyball çok güzel bir spor onu liseden biri ounyuyorum ,kısa olmama rağmen iyice oynuyorum çok fazle izlemioyorum ama.</p> 
@@ -43,5 +64,24 @@
       </div>
 
     </div>
+    <script>
+     function ShowSDB() {
+      let SDB=document.getElementById("BarButton");
+    let sideBar = document.getElementById("sideBar");  
+    sideBar.classList.toggle("open");
+   
+}
+     document.addEventListener("click",function(e){
+      let SDB=document.getElementById("BarButton");
+      let sideBar = document.getElementById("sideBar");  
+      let isClickedBar= sideBar.contains(e.target)||SDB.contains(e.target);
+      if(!isClickedBar &&sideBar.classList.contains("open")){
+        sideBar.classList.remove("open");
+        
+      }
+
+     });
+     
+    </script>
     </body>
 </html>

@@ -1,6 +1,9 @@
 .hakkindaBody{
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+body{
+        background-color:blanchedalmond;
+}
 #fst{
    position: absolute;
    top:6%;
@@ -15,9 +18,64 @@
     100%{transform:translate(0);}
 
 }
+
+#sideBar{
+    height:100vh;
+    width:0%;
+  overflow: hidden;
+   opacity: 0;
+position:fixed;
+z-index: 100;
+box-sizing: border-box;
+transition: width 0.5s ease, opacity 0.5s ease;
+background-color :white;
+box-shadow: 40px 40px 40px rgba(0, 0, 0, .5);
+border-radius: 10px;
+border-color:;
+}
+#sideBar.open{
+    height:100vh;
+    width:20%;
+    position:fixed;
+    opacity: 1;
+   
+
+}
+
+.sideBarButton{
+    position:fixed;
+    z-index:220;
+    height: 4%;
+    width :4%;
+    background-color: transparent;
+    border-radius:10px;
+    margin-top: .5%;
+    margin-left: .5%;
+    border-style: none;
+     
+}
+#BarButton.hide{
+    opacity: 0;
+}
+.sideBarChoice{
+    background-color:transparent;
+    border-radius: 5px;
+}
+#SBImage
+{
+height: 100%;
+width: 100%;
+}
 .jump-letter{
 
     animation: jump 2s infinite;
+}
+.sideBarPic{
+    height: 5%;
+    width: 7%;
+     margin-left: 2%;
+     margin-right: 2%;
+     background-color: transparent;
 }
 
 #Sidepic{
@@ -48,15 +106,20 @@
     width: 40%;
     margin-left:20% ;
 }
-img {
+.bigImg {
     max-width: 100%;
     height: auto;
     display: block; /* removes small gaps below image */
     border-radius: 20px;
-    box-shadow:10px 10px 20px rbga(0,0,0,0.1);
+    box-shadow:10px 10px 20px rgba(0,0,0,.5);
     margin-right: 5%;
 
   }
+  
+.cFlex-container{
+    display: flex;
+    flex-direction: column;
+}
 .flex-container{
     display: flex;
     flex-direction: row;
@@ -65,4 +128,7 @@ img {
     .flex-container{
 flex-direction: column;
     } 
+    #FaCont{
+        margin-left: 20%;
+    }
 }
