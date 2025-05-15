@@ -1,0 +1,141 @@
+<html>
+<head>
+      <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../css/bootstrap.min.css">
+        <link rel="stylesheet" href="../CSStyle/iletisim.css">
+        <link rel="stylesheet" href="../SideBar/SidBar.css">
+        <link rel="stylesheet" href="../CSStyle/ilgi.css">
+        <script src="../js/react.development.js"></script>
+        <script src="../js/react-dom.development.js"></script>
+        <script src="../js/babel.min.js"></script>
+         <title>Iletişism sayfası</title>
+     <link rel="stylesheet" href="">   
+    </head>
+
+   <body>
+   
+   <button  class="sideBarButton"  id="BarButton" onclick="js:ShowSDB()">
+            <img src="../SideBar/sideBar.jpg" id="SBImage" alt="">
+          </button> 
+        
+<div id="sideBar" class="cFlex-container column">
+            
+    <div class="box"><button  class="sideBarButton" onclick="js:ShowSDB()">
+              <img src="../SideBar/sideBar.jpg" id="SBImage" alt="">
+            </button>
+     </div> 
+          <br><br><br>
+     <div class="box">
+           <a href="" class="refNoLine sideBarChoice"><h6> <img src="../SideBar/daimond.png" id="sideBarPic" alt=""><strong> Hakkinda </strong></h6></a><br><br>
+           <a href="" class="refNoLine sideBarChoice"><h6> <img src="../SideBar/daimond.png" id="sideBarPic" alt=""><strong> Miras </strong></h6></a><br><br> 
+            <a href="" class="refNoLine sideBarChoice"><h6> <img src="../SideBar/daimond.png" id="sideBarPic" alt=""><strong> CV </strong></h6></a><br><br>
+            <a href="" class="refNoLine sideBarChoice"><h6> <img src="../SideBar/daimond.png" id="sideBarPic" alt=""><strong> iletsism </strong></h6></a><br><br>
+       </div>
+</div>
+</aside>
+<header>
+    <div id="BigPicDiv">
+        <img src="ilgiBgImg.jpg" id="BigPic"alt="">
+          <div class="OverText"> 
+            <h1><strong>Ilgi alanlarım</strong></h1>
+            <hr class="border border-secondry border-5 opacity-150"> 
+        </div>
+             
+        </div>
+</header>
+<main>
+    <div class="section-title">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 4L5.5 8H10L8.5 4H4Z" fill="#4F46E5"/>
+            <path d="M10 4L11.5 8H16L14.5 4H10Z" fill="#6366F1"/>
+            <path d="M16 4L17.5 8H20V4H16Z" fill="#818CF8"/>
+            <path d="M3 9H21V20H3V9Z" fill="#E0E7FF"/>
+            <path d="M3 9H21V11H3V9Z" fill="#C7D2FE"/>
+          </svg>
+          
+        <span id="bigText2" >İlgilendiğim Filmler</span>
+      </div>
+      <h3 id="myH3">çocukken çok fazla film izlerdim aslında filmler ingilizce konuşabilmemin sebebidir. <br>Uzun saatler boyunca televizyonun karşısında oturup film izlerdim. Şu anda en iyi 3 film:</h3>
+
+    <br>
+    <div id="movies" class="flex-container container  "></div>
+    <br><br><br><br>
+
+
+    <div class="section-title">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 4H14C15.1046 4 16 4.89543 16 6V20C16 18.8954 15.1046 18 14 18H4V4Z" fill="#6366F1"/>
+            <path d="M20 4H16V20H20V6C20 4.89543 19.1046 4 18 4Z" fill="#4F46E5"/>
+            <path d="M4 18H14V20H4C2.89543 20 2 19.1046 2 18V6C2 4.89543 2.89543 4 4 4V18Z" fill="#A5B4FC"/>
+          </svg>          
+        <span id="bigText2"> İlgilendiğim Kitaplar:</span>
+        </div>   
+        <h3 id="myH3">Çocukluğumdan beri Harry Potter filmlerini ve kitaplarını çok sevdim.<br> Beni başka bir dünyaya götürdüler ve gerçekten eğlenceliydi</h3>
+    <div id="books" class="flex-container container"></div>
+<br><br>
+
+
+
+</main>
+<script>
+     function ShowSDB() {
+      let SDB=document.getElementById("BarButton");
+       let sideBar = document.getElementById("sideBar");  
+       sideBar.classList.toggle("open");
+      
+   }
+        document.addEventListener("click",function(e){
+         let SDB=document.getElementById("BarButton");
+         let sideBar = document.getElementById("sideBar");  
+         let isClickedBar= sideBar.contains(e.target)||SDB.contains(e.target);
+         if(!isClickedBar &&sideBar.classList.contains("open")){
+           sideBar.classList.remove("open");          
+         }
+        });
+
+        function truncate(text, maxLength) {
+  return text.length > maxLength ? text.slice(0, maxLength) + "..." : text;
+}
+
+        var newLineIndex=0;
+        fetch('https://api.themoviedb.org/3/movie/popular?api_key=b8c94fd728d5dd0d37df1e1f47077fdc')
+  .then(res => res.json())
+  .then(data => {
+    const movieContainer = document.getElementById("movies");
+    for(let i=0; i<3;i++){
+     var movie=data.results[i];   
+      movieContainer.innerHTML += ` 
+                <div id="movie${i}" class="card myCard">
+                <img class="myCardImg" src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title}">
+                <h3>${movie.title}</h3>
+                <p>${truncate(movie.overview, 100)}</p>
+              </div>
+             `
+
+    }
+
+    });
+
+    fetch(`https://www.googleapis.com/books/v1/volumes?q=harry+potter`)  
+.then(res=>res.json())
+.then(data=>{
+var bookContainer=document.getElementById("books");
+for( let j=3;j<6;j++){
+var book=data.items[j];
+const info=book.volumeInfo;
+const thumbnail = info.imageLinks?.thumbnail || '';
+const title = info.title || 'No title';
+const description = info.description || 'No description available.';
+bookContainer.innerHTML += `
+        <div class="card col-6 myCard" id="bookNo${j}">
+         <img class="myCardImg" src="${thumbnail}" alt="${title}">
+           <h5>${title}</h5>
+          <p><strong>${truncate(description, 100)}</strong></p>
+        </div>
+      `;
+}
+})
+</script>
+</body>
+</html>
