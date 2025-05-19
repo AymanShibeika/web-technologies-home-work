@@ -1,0 +1,88 @@
+<html>
+<head>
+      <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../css/bootstrap.min.css">
+        <link rel="stylesheet" href="../CSStyle/iletisim.css">
+        <link rel="stylesheet" href="../SideBar/SidBar.css">
+        <link rel="stylesheet" href="../CSStyle/Mirasimiz.css">
+        <script src="../js/react.development.js"></script>
+        <script src="../js/react-dom.development.js"></script>
+        <script src="../js/babel.min.js"></script>
+         <title>Mirasımız sayfası</title>
+     <link rel="stylesheet" href="">   
+    </head>
+
+   <body>
+   
+   <button  class="sideBarButton"  id="BarButton" onclick="js:ShowSDB()">
+            <img src="../SideBar/sideBar.jpg" id="SBImage" alt="">
+          </button> 
+        
+<div id="sideBar" class="cFlex-container column">
+            
+    <div class="box"><button  class="sideBarButton" onclick="js:ShowSDB()">
+              <img src="../SideBar/sideBar.jpg" id="SBImage" alt="">
+            </button>
+     </div> 
+          <br><br><br>
+     <div class="box">
+           <a href="" class="refNoLine sideBarChoice"><h6> <img src="../SideBar/daimond.png" id="sideBarPic" alt=""><strong> Hakkinda </strong></h6></a><br><br>
+           <a href="" class="refNoLine sideBarChoice"><h6> <img src="../SideBar/daimond.png" id="sideBarPic" alt=""><strong> Miras </strong></h6></a><br><br> 
+            <a href="" class="refNoLine sideBarChoice"><h6> <img src="../SideBar/daimond.png" id="sideBarPic" alt=""><strong> CV </strong></h6></a><br><br>
+            <a href="" class="refNoLine sideBarChoice"><h6> <img src="../SideBar/daimond.png" id="sideBarPic" alt=""><strong> iletsism </strong></h6></a><br><br>
+       </div>
+</div>
+</aside>
+<header>
+  <div id="KhartoumDiv">
+    <img src="Khartoum.jpg" id="KhartoumPic"alt="">
+    <div  id="SudanOverText"> <h1><strong>Sudan'nın Mirası</strong></h1></div>
+</div>
+</header>
+<main>
+  <div class="container row">
+    <div data-bs-spy="scroll " data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" class="scrollspy-example  p-3 rounded-2 myScroll col-12" tabindex="0">
+      <h2 id="scrollspyHeading1">Sudan & sahra</h2>
+      <p class="myp">Kavurucu güneş tepede yakarken altın kumullar deniz gibi dalgalanır — deve kervanları sessizliği ritmik adımlarla deler, çöl rüzgarları ise kadim sırları fısıldar. Ufukta bir an beliren serap, gözleri büyülerken, çöl gecesi aniden çöker ve gökyüzü yıldızlarla patlar.
+      </p> 
+    </div>
+    <div id=" desertpicDiv" class="col-6">
+      <img src="dessert.jpg" alt="Nuba Dance" class="pic">
+    </div>
+    <div id=" posterpicDiv" class="col-6">
+      <img src="poster.jpg" alt="Nuba Dance" class="pic">
+    </div><br><br><br><br>
+</div>
+<div data-bs-spy="scroll " data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" class="scrollspy-example  p-3 rounded-2 myScroll2 col-12" tabindex="0">
+  <h2 id="scrollspyHeading1">Esmer Aşk </h2>
+  <p class="myp">Sudan ay ışığında jirtik, çöl ateşi gibi parıldar,
+    Altın bilezikler, yalnızca aşka fısıldanan sırları çalar.
+    Kınalar ellerinde asırlık zarafetle dans eder,
+    Jirtik içinde, zamanın silemeyeceği bir şiire dönüşür.  </p> 
+</div>
+<div id="picDiv1">
+  <img src="jirtik.jpg" alt="Nuba Dance" class="pic">
+</div>
+<div class="picDiv2 ">
+  <img src="jirtik2.jpg" alt="Nuba Dance" class="pic">
+</div>
+</div>
+</main>
+<script>
+      function ShowSDB() {
+      let SDB=document.getElementById("BarButton");
+       let sideBar = document.getElementById("sideBar");  
+       sideBar.classList.toggle("open");
+      
+   }
+        document.addEventListener("click",function(e){
+         let SDB=document.getElementById("BarButton");
+         let sideBar = document.getElementById("sideBar");  
+         let isClickedBar= sideBar.contains(e.target)||SDB.contains(e.target);
+         if(!isClickedBar &&sideBar.classList.contains("open")){
+           sideBar.classList.remove("open");          
+         }
+        });
+</script>
+</body>
