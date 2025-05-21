@@ -26,10 +26,13 @@
      </div> 
           <br><br><br>
      <div class="box">
-           <a href="" class="refNoLine sideBarChoice"><h6> <img src="../SideBar/daimond.png" id="sideBarPic" alt=""><strong> Hakkinda </strong></h6></a><br><br>
-           <a href="" class="refNoLine sideBarChoice"><h6> <img src="../SideBar/daimond.png" id="sideBarPic" alt=""><strong> Miras </strong></h6></a><br><br> 
-            <a href="" class="refNoLine sideBarChoice"><h6> <img src="../SideBar/daimond.png" id="sideBarPic" alt=""><strong> CV </strong></h6></a><br><br>
-            <a href="" class="refNoLine sideBarChoice"><h6> <img src="../SideBar/daimond.png" id="sideBarPic" alt=""><strong> iletsism </strong></h6></a><br><br>
+   <a href="../Hakknida/hakkinda.html" class="refNoLine sideBarChoice"><h6> <img src="../SideBar/daimond.png" id="sideBarPic" alt=""><strong> Hakkimda </strong></h6></a><br><br>
+       <a href="../ilgi alanlarım/ilgi.html" class="refNoLine sideBarChoice"><h6> <img src="../SideBar/daimond.png" id="sideBarPic" alt=""><strong> ilgi alanlarım </strong></h6></a><br><br>
+       <a href="../Eğitim/Eiğtim.html" class="refNoLine sideBarChoice"><h6> <img src="../SideBar/daimond.png" id="sideBarPic" alt=""><strong> Eğitim </strong></h6></a><br><br>
+       <a href="../Şehrim/Mycity.html" class="refNoLine sideBarChoice"><h6> <img src="../SideBar/daimond.png" id="sideBarPic" alt=""><strong> My city</strong></h6></a><br><br> 
+       <a href="../Mirasımız/Mirasımı.html" class="refNoLine sideBarChoice"><h6> <img src="../SideBar/daimond.png" id="sideBarPic" alt=""><strong> Miras </strong></h6></a><br><br> 
+       <a href="../İletişim/iletisim.html" class="refNoLine sideBarChoice"><h6> <img src="../SideBar/daimond.png" id="sideBarPic" alt=""><strong> iletsism </strong></h6></a><br><br>
+       <a href="../Login/login.html" class="refNoLine sideBarChoice"><h6> <img src="../SideBar/daimond.png" id="sideBarPic" alt=""><strong> Login </strong></h6></a><br><br>
        </div>
 </div>
 </aside>
@@ -41,17 +44,17 @@
 <main>
   <div><h4><strong>By filling the next from we will be able to contact with you</strong></h4></div>
   <br><br>
-  <form class="row g-3 " id="Myform" novalidate>
+  <form class="row g-3 " id="Myform" novalidate action="iletisim.php" method="post">
     <div class="col-md-3">
       <label id="Fname" class="form-label">First name</label>
-      <input type="text" class="form-control" id="validationCustom01"  >
+      <input type="text" class="form-control" id="validationCustom01"  name="firstName">
       <div class="valid-feedback">
         Looks good!
       </div>
     </div>
     <div class="col-md-3">
       <label id="Lname" class="form-label">Last name</label>
-      <input type="text" class="form-control" id="validationCustom02"  >
+      <input type="text" class="form-control" id="validationCustom02"  name="lastName">
       <div class="valid-feedback">
         Looks good!
       </div>
@@ -60,68 +63,68 @@
       <label for="validationCustomUsername" class="form-label">Your gmail</label>
       <div class="input-group has-validation">
         <span class="input-group-text" id="inputGroupPrepend">@</span>
-        <input type="text" class="form-control" id="gmail" aria-describedby="inputGroupPrepend" >
+        <input type="text" class="form-control" id="gmail" aria-describedby="inputGroupPrepend" name="gmail" >
         <div class="invalid-feedback">
           Please choose a username.
         </div>
       </div>
     </div>
     <div class="col-md-3">
-      <label for="inputPassword5" class="form-label">Password Suggetion</label>
-      <input type="text" id="Pass" class="form-control" >
+      <label for="inputPassword5" class="form-label" >Password Suggetion</label>
+      <input type="text" id="Pass" class="form-control" name="pass" >
       <div id="passwordHelpBlock" class="form-text">
         Your password must be 8-20 characters long, contain letters ,special characters and numbers, and must not contain spaces.
       </div>
     </div>
     <div class="col-md-3">
       <label for="inputPassword5" class="form-label">Phone Number</label>
-      <input type="text" id="phNumber" class="form-control" >
+      <input type="text" id="phNumber" class="form-control" name="telNumber">
       <div id="passwordHelpBlock" class="form-text">
       your phone number must start with zero and contain 11 digits
       </div>
     </div>
     <div class="col-md-3">
       <label for="validationCustom04" class="form-label">State</label>
-      <select class="form-select" id="validationCustom04" >
-        <option  value="mr">Marmara</option>
-        <option  value="gn">Guney Anadol</option>
-        <option value="kr">Kara Deniz</option>
+      <select class="form-select" id="validationCustom04" name="select" >
+        <option  value="Marmara">Marmara</option>
+        <option  value="Guney Anadol">Guney Anadol</option>
+        <option value="Kara Deniz">Kara Deniz</option>
       </select>
     </div>
     <div class="col-md-3">
       <label for="fileUpload" class="form-label">upload your design idea</label>
-      <input type="file" class="form-control" id="fileUpload" >
+      <input type="file" class="form-control" id="fileUpload" name="file" >
       <div class="invalid-feedback">
         Please provide a valid zip.
       </div>
     </div>
     <div class="col-3">
       <label for="color" class="form-label">Your favorit color</label><br>
-      <input type="color" id="color" class="">
+      <input type="color" id="color" class="" name="color">
     </div>
     <div class="col-3">
       <label for="birth"  class="form-label">Your Birth date</label><br>
-      <input type="date"  class="form-control" id="birth">
+      <input type="date"  class="form-control" id="birth" name="birth">
     </div>
     <div class="col-3">
       <label for="fTime"  class="form-label">What time are you filling the form</label><br>
-      <input type="time"  class="form-control" id="fTime">
+      <input type="time"  class="form-control" id="fTime" name="time">
     </div>
     <div class="col-3"> 
       <label for="radio">Which page you liked the most</label><br>
-      <input type="radio" name="Pgradio" value="Hk">Hakkimda <br>
-      <input type="radio" name="Pgradio" value="Ct">My city  <br>
-      <input type="radio" name="Pgradio" value="Cv">Cv page  <br>
-      <input type="radio" name="Pgradio" value="Mi">Miras  <br>
+      <input type="radio" name="Pgradio" value="Hakkimda">Hakkimda <br>
+      <input type="radio" name="Pgradio" value="My city">My city  <br>
+      <input type="radio" name="Pgradio" value="Cv page">Cv page  <br>
+      <input type="radio" name="Pgradio" value="Miras">Miras  <br>
     </div>
     <div class="col-3">
       <label for="range" class="form-label">Rate our site! </label>
-      <input type="range" class="form-range" id="range">
+      <input type="range" class="form-range" id="range" name="rating">
     </div>    
 
     <div class="col-12">
         <label for="tarea" class="form-label">How can we Imrpove our website?</label><br>
-        <textarea name="textarea"  class="form-control" id="tarea"></textarea>
+        <textarea name="textarea"  class="form-control" id="tarea" ></textarea>
     </div>
 
     <div class="col-12">
@@ -183,6 +186,7 @@ var oneChecked=Array.from(radios).some(r=>r.checked);
 var conditionBox=document.getElementById("invalidCheck");
 if(!isempty && !conditionBox.checked){
   alert("Please agree on the our terms and conditions.")
+  isempty=true;
 }  
 
 var gmail=document.getElementById("gmail").value.trim();
@@ -210,20 +214,76 @@ if(!wrongFormat &&!isempty)form.submit();
 }
      </script>
 <script type="text/babel">
+
   function ReactSubmitButton() {
-    const handleClick = (e) => {
+    const handleSubmit = (e) => {
       e.preventDefault();
-      CheckForm(); // Call your existing JavaScript validation
+
+      const form = document.getElementById("Myform");
+
+      const firstName = form.firstName.value.trim();
+      const lastName = form.lastName.value.trim();
+      const gmail = form.gmail.value.trim();
+      const pass = form.pass.value.trim();
+      const tel = form.telNumber.value.trim();
+      const textarea = form.textarea.value.trim();
+      const birth = form.birth.value.trim();
+      const time = form.time.value.trim();
+      const file = form.file.value.trim();
+      const agreed = form.invalidCheck.checked;
+
+      const radioButtons = form.querySelectorAll('input[name="Pgradio"]');
+      const oneChecked = Array.from(radioButtons).some(r => r.checked);
+
+      const gmailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      const telRegex = /^0\d{10}$/;
+      const passRegex = /^(?=.*\d)(?=.*[A-Z])(?=.*[!@#$%^&*()_+":?/\\\[\]])[A-Za-z\d!@#$%^&*()_+":?/\\\[\]]{8,20}$/;
+
+      // Check for empty fields
+      if (!firstName || !lastName || !gmail || !pass || !tel || !textarea || !birth || !time || !file) {
+        alert("Please fill everything.");
+        return;
+      }
+
+      if (!oneChecked) {
+        alert("Please select one page you liked the most.");
+        return;
+      }
+
+      if (!agreed) {
+        alert("Please agree to our terms and conditions.");
+        return;
+      }
+
+      if (!gmailRegex.test(gmail)) {
+        alert("The mail format is not valid.");
+        return;
+      }
+
+      if (!telRegex.test(tel)) {
+        alert("The phone format is incorrect.");
+        return;
+      }
+
+      if (!passRegex.test(pass)) {
+        alert("Your password must be 8–20 characters long, contain uppercase letters, numbers, and special characters.");
+        return;
+      }
+
+      
+      form.submit();
     };
 
     return (
-      <button className="btn btn-success" onClick={handleClick}>
-        Submit with React (Local)
+      <button className="btn btn-success" onClick={handleSubmit}>
+        Submit with React
       </button>
     );
   }
 
   ReactDOM.render(<ReactSubmitButton />, document.getElementById("reactSubmitButton"));
+</script>
+
 </script>
 
 
